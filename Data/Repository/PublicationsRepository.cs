@@ -22,22 +22,31 @@ namespace Data.Repository
 
         public void DeletePublicationById(int id)
         {
-            throw new NotImplementedException();
+            var publication = list.FirstOrDefault(d => d.Id == id);
+            if (publication != null)
+            {
+                list.Remove(publication);
+            }
         }
 
-        public List<PublicationEntity> GetAllPublications()
+        public void UpdatePublication(PublicationEntity updated)
         {
-            throw new NotImplementedException();
+            var publication = list.FirstOrDefault(d => d.Id == updated.Id);
+            if (publication != null)
+            {
+                publication.Name = updated.Name;
+                publication.Author = updated.Author;
+            }
         }
 
         public PublicationEntity GetPublicationById(int id)
         {
-            throw new NotImplementedException();
+            return list.FirstOrDefault(d => d.Id == id);
         }
 
-        public void UpdatePublication(PublicationEntity id)
+        public List<PublicationEntity> GetAllPublications()
         {
-            throw new NotImplementedException();
+            return list;
         }
     }
 }

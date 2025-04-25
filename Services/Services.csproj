@@ -59,6 +59,10 @@
       <Project>{02eb00b3-278d-4426-99ff-533378042d29}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{2CE5CA09-66D0-4AF8-9862-0D87539B6D54}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

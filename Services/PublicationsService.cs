@@ -20,7 +20,7 @@ namespace Services
 
         public void AddPublication(Publication publication)
         {
-            _publicationsRepository.AddPublication(publication);
+            _publicationsRepository.AddPublication(publication.ToEntity());
         }
 
         public void DeletePublicationById(int id)
