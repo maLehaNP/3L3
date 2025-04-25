@@ -11,10 +11,13 @@ namespace Data.Repository
     class PublicationsRepository : IPublicationsRepository
     {
         private static List<PublicationEntity> list = new List<PublicationEntity>();
+        private static int currentId = 1;
 
         public void AddPublication(PublicationEntity publication)
         {
-            throw new NotImplementedException();
+            publication.Id = currentId++;
+            publication.CreatedDate = DateTime.Now;
+            list.Add(publication);
         }
 
         public void DeletePublicationById(int id)
