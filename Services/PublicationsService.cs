@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace Services
 {
@@ -12,9 +13,14 @@ namespace Services
     {
         private readonly IPublicationsRepository _publicationsRepository;
 
+        public PublicationsService(IPublicationsRepository publicationsRepository)
+        {
+            _publicationsRepository = publicationsRepository;
+        }
+
         public void AddPublication(Publication publication)
         {
-            throw new NotImplementedException();
+            _publicationsRepository.AddPublication(publication);
         }
 
         public void DeletePublicationById(int id)

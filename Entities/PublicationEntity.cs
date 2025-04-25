@@ -7,7 +7,7 @@ using Entities.Abstract;
 
 namespace Entities
 {
-    public abstract class PublicationEntity : BaseEntity
+    public class PublicationEntity : BaseEntity
     {
         public string Name { get; set; }
         public string Author { get; set; }
