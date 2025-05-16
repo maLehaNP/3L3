@@ -8,22 +8,22 @@ namespace API
 {
     public class PublicationsController
     {
-        private readonly IPublicationsService _driversService;
+        private readonly IPublicationsService _publicationsService;
 
-        public PublicationsController(IPublicationsService driversService)
+        public PublicationsController(IPublicationsService publicationsService)
         {
-            _driversService = driversService;
+            _publicationsService = publicationsService;
         }
 
 
-        public void AddDriver(PublicationModel model)
+        public void AddPublication(PublicationModel model)
         {
-            _driversService.AddPublication(model.ToDomain());
+            _publicationsService.AddPublication(model.ToDomain());
         }
 
-        /*public PublicationModel GetDriverById(int id)
+        public PublicationModel GetPublicationById(int id)
         {
-            var publication = _driversService.GetPublicationById(id);
+            var publication = _publicationsService.GetPublicationById(id);
             if (publication == null) return null;
 
             return new PublicationModel
@@ -33,14 +33,14 @@ namespace API
             };
         }
 
-        public void DeleteDriverById(int id)
+        public void DeletePublicationById(int id)
         {
-            _driversService.DeletePublicationById(id);
+            _publicationsService.DeletePublicationById(id);
         }
 
-        public List<PublicationModel> GetAllDrivers()
+        public List<PublicationModel> GetAllPublications()
         {
-            return _driversService.GetAllPublications().Select(x => x.ToModel()).ToList();
-        }*/
+            return _publicationsService.GetAllPublications().Select(x => x.ToModel()).ToList();
+        }
     }
 }
