@@ -25,22 +25,30 @@ namespace Services
 
         public void DeletePublicationById(int id)
         {
-            throw new NotImplementedException();
+            _publicationsRepository.DeletePublicationById(id);
         }
 
         public List<Publication> GetAllPublications()
         {
-            throw new NotImplementedException();
+            var entities = _publicationsRepository.GetAllPublications();
+            return entities.Select(x => x.ToDomain()).ToList();
         }
 
         public Publication GetPublicationById(int id)
         {
-            throw new NotImplementedException();
+            var entity = _publicationsRepository.GetPublicationById(id);
+            if (entity == null) return null;
+
+            return new Publication
+            {
+                Name = entity.Name,
+                Author = entity.Author
+            };
         }
 
-        public void UpdatePublication(Publication id)
+        public void UpdatePublication(Publication publication)
         {
-            throw new NotImplementedException();
+            _publicationsRepository.UpdatePublication(publication.ToEntity());
         }
     }
 }

@@ -54,6 +54,10 @@
       <Project>{02eb00b3-278d-4426-99ff-533378042d29}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{2CE5CA09-66D0-4AF8-9862-0D87539B6D54}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mappers\Mappers.csproj">
       <Project>{5949eec5-c42d-456b-8fb8-48d6a1f61e4b}</Project>
       <Name>Mappers</Name>

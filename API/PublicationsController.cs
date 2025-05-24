@@ -1,8 +1,10 @@
-﻿using Domain.Abstract;
+﻿using Domain;
+using Domain.Abstract;
 using Mappers;
 using Models;
 using Services;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace API
 {
@@ -40,7 +42,7 @@ namespace API
 
         public List<PublicationModel> GetAllPublications()
         {
-            return _publicationsService.GetAllPublications().Select(x => x.ToModel()).ToList();
+            return _publicationsService.GetAllPublications().Select<Publication>(x => x.ToModel()).ToList();
         }
     }
 }

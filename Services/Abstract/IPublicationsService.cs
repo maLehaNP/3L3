@@ -9,7 +9,7 @@ namespace Domain.Abstract
     public interface IPublicationsService
     {
         void AddPublication(Publication publication);
-        void UpdatePublication(Publication id);
+        void UpdatePublication(Publication publication);
         Publication GetPublicationById(int id);
         void DeletePublicationById(int id);
 

@@ -18,17 +18,16 @@ namespace Mappers
         }
 
         // Entity → Domain
-        /*public static Driver ToDomain(this DriverEntity entity)
+        public static Publication ToDomain(this PublicationEntity entity)
         {
             if (entity == null) return null;
 
-            return new Driver
+            return new Publication
             {
                 Name = entity.Name,
-                Age = entity.Age,
-                Vehicles = new List<Vehicle>()
+                Author = entity.Author
             };
-        }*/
+        }
 
         // Model → Domain
         public static Publication ToDomain(this PublicationModel model)
@@ -43,16 +42,15 @@ namespace Mappers
         }
 
         // Domain → Model
-        /*public static DriverModel ToModel(this Driver driver)
+        public static PublicationModel ToModel(this Publication driver)
         {
             if (driver == null) return null;
 
-            return new DriverModel
+            return new PublicationModel
             {
                 Name = driver.Name,
-                Age = driver.Age,
-                Vehicles = driver.Vehicles?.Select(v => v.ToModel()).ToList() ?? new List<VehicleModel>()
+                Author = driver.Author
             };
-        }*/
+        }
     }
 }
